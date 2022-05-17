@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# This bash script sets up the upstream submodule
+
+git submodule update --init --recursive

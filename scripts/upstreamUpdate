@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# This bash script updates the testUpstream git submodule to a *new* HEAD
+
+cd upstream
+
+git fetch
+
+echo ""
+
+git log --oneline origin/main -10
+
+echo ""
+
+echo "Please enter a commit or tag from the list above"
+
+read -p "(or ^C to abort): " newCommit
+
+if [ -n "$newCommit" ] ; then
+
+  echo git checkout -q $newCommit
+
+fi
