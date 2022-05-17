@@ -10,6 +10,9 @@ echo ""
 
 git log --oneline origin/main -10
 
+#git tag -n10 --color --sort version:refname                          \
+#  --format "%(refname:short)  %(committerdate)  %(contents:subject)"
+
 echo ""
 
 echo "Please enter a commit or tag from the list above"
@@ -18,6 +21,6 @@ read -p "(or ^C to abort): " newCommit
 
 if [ -n "$newCommit" ] ; then
 
-  echo git checkout -q $newCommit
+  git checkout -q $newCommit
 
 fi
